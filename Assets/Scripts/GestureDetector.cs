@@ -15,6 +15,10 @@ public class GestureDetector : MonoBehaviour
 
     public Vector3 manipulationPreviousPosition { get; private set; }
 
+    private float rotationFactor = 10.0f;
+
+    private float translationFactor = 5.0f;
+
     public void Awake()
     {
         Instance = this;
@@ -77,12 +81,10 @@ public class GestureDetector : MonoBehaviour
             // Make sure the current state is rotate
             if (HighlightMenu.Instance.CurrentState == HighlightMenu.State.Rotate)
             {
-                // Calculate rotationFactor based on GestureManager's NavigationPosition.X and multiply by RotationSensitivity.
-                // This will help control the amount of rotation.
-                float rotationFactor = Instance.NavigationPosition.x * 10.0f;
+                // Calculate based on GestureManager's NavigationPosition.X and multiply by RotationSensitivity.
 
                 //transform.Rotate along the Y axis using rotationFactor
-                transform.Rotate(new Vector3(0, -1 * rotationFactor, 0));
+                transform.Rotate(new Vector3(0, -1 * Instance.NavigationPosition.x * rotationFactor, 0));
             }
         }
     }
@@ -113,7 +115,7 @@ public class GestureDetector : MonoBehaviour
             {
                 Vector3 diffVector = position - manipulationPreviousPosition;
                 manipulationPreviousPosition = position;
-                HighlightMenu.Instance.Selected.gameObject.transform.position += diffVector;
+                HighlightMenu.Instance.Selected.gameObject.transform.position += diffVector * translationFactor;
             }
         }
     }
