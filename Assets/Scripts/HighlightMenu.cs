@@ -3,6 +3,7 @@ using System.Collections;
 
 public class HighlightMenu : SmoothBehaviour
 {
+    [HideInInspector]
     public static HighlightMenu Instance;
 
     public Hologram Selected;

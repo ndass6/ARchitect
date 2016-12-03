@@ -3,6 +3,5 @@ using System.Collections;
 
 public class Hologram : SmoothBehaviour
 {
-    [SerializeField]
-    private float cost = 0;
+    public float Cost = 0;
 }
