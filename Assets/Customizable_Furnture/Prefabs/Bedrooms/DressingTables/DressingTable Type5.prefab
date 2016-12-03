@@ -7364,6 +7364,7 @@ GameObject:
   m_Component:
   - component: {fileID: 420372}
   - component: {fileID: 11416416}
+  - component: {fileID: 114990741519454412}
   m_Layer: 0
   m_Name: DressingTable Type5
   m_TagString: Untagged
@@ -32666,3 +32667,19 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 162414}
   m_IsPrefabParent: 1
+--- !u!114 &114990741519454412
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 162414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b0525ef2e57da74a8067501718ba702, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maintainDistance: 0
+  faceCamera: 0
+  smoothPosition: 0
+  smoothRotation: 0
+  Cost: 69.99
