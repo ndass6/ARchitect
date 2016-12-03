@@ -32,7 +32,7 @@ public class SmoothBehaviour : MonoBehaviour
         transform.position = smoothPosition ? Vector3.Lerp(transform.position, targetPosition, Time.fixedDeltaTime * 4) : targetPosition;
 
         if(faceCamera)
-            targetRotation = Quaternion.LookRotation(Vector3.forward, Camera.main.transform.position - transform.position);
+            targetRotation = Quaternion.LookRotation(Camera.main.transform.position - transform.position, Vector3.up);
         transform.rotation = smoothRotation ? Quaternion.Slerp(transform.rotation, targetRotation, Time.fixedDeltaTime * 4) : targetRotation;
     }
 
