@@ -9,7 +9,36 @@ public class HighlightMenu : SmoothBehaviour
     public Hologram Selected;
 
     public enum State { Idle, Move, Rotate }
-    public State CurrentState = State.Idle;
+    public State CurrentState
+    {
+        get
+        {
+            return currentState;
+        }
+        set
+        {
+            switch(currentState)
+            {
+                case State.Move:
+                    moveRenderer.GetComponent<HighlightButton>().SetGlowAlpha(0);
+                    break;
+                case State.Rotate:
+                    rotateRenderer.GetComponent<HighlightButton>().SetGlowAlpha(0);
+                    break;
+            }
+            switch(value)
+            {
+                case State.Move:
+                    moveRenderer.GetComponent<HighlightButton>().SetGlowAlpha(1);
+                    break;
+                case State.Rotate:
+                    rotateRenderer.GetComponent<HighlightButton>().SetGlowAlpha(1);
+                    break;
+            }
+            currentState = value;
+        }
+    }
+    public State currentState = State.Idle;
 
     private bool busy;
 
