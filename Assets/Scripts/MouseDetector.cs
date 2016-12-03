@@ -33,8 +33,12 @@ public class MouseDetector : MonoBehaviour
                                 HighlightMenu.Instance.CurrentState = HighlightMenu.State.Rotate;
                             break;
                         case HighlightButton.State.Delete:
-                            Destroy(HighlightMenu.Instance.Selected.gameObject);
-                            HighlightMenu.Instance.CloseMenu();
+                            if(!HighlightMenu.Instance.Busy)
+                            {
+                                CostDisplay.Instance.UpdateCost(-HighlightMenu.Instance.Selected.Cost);
+                                Destroy(HighlightMenu.Instance.Selected.gameObject);
+                                HighlightMenu.Instance.CloseMenu();
+                            }
                             break;
                     }
                 }
