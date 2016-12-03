@@ -44,6 +44,8 @@ public class HighlightMenu : SmoothBehaviour
 
         // TODO Turn on highlight effect
         Selected = hologram;
+        transform.position = targetPosition = Selected.transform.position + new Vector3(0, 2, 0);
+        transform.rotation = targetRotation = Quaternion.LookRotation(transform.position - Camera.main.transform.position, Vector3.up);
         gameObject.SetActive(true);
     }
 

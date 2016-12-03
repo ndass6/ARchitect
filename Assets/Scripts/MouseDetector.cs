@@ -9,7 +9,7 @@ public class MouseDetector : MonoBehaviour
         if(Input.GetMouseButtonDown(0))
         {
             RaycastHit hitInfo;
-            if(Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hitInfo))
+            if(Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo))
             {
                 // Perform action based on object clicked
                 if(hitInfo.collider.GetComponent<Hologram>())
@@ -29,6 +29,7 @@ public class MouseDetector : MonoBehaviour
                         case HighlightButton.State.Delete:
                             Destroy(HighlightMenu.Instance.Selected.gameObject);
                             CostDisplay.Instance.UpdateCost();
+                            HighlightMenu.Instance.CloseMenu();
                             break;
                     }
                 }
