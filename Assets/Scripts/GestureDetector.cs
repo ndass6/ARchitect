@@ -22,22 +22,19 @@ public class GestureDetector : MonoBehaviour
             var gazeDirection = Camera.main.transform.forward;
 
             RaycastHit hitInfo;
+            // Raycast hits an object
             if (Physics.Raycast(headPosition, gazeDirection, out hitInfo))
             {
-                // Close card if in line of sight
                 Collider col = hitInfo.collider;
-                if (col.tag == "Card")
-                {
-                    // GetComponent<CardController>().RemoveCard(col.GetComponent<Card>());
-                    return;
-                }
             }
+
+            // Raycast does not hit an object
             else
             {
-                // TODO Call photo capture instead
-                // gameObject.AddComponent<CameraCapture>();
+
             }
         };
+
         recognizer.StartCapturingGestures();
     }
 }
