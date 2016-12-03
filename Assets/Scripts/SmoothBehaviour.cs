@@ -60,7 +60,7 @@ public class SmoothBehaviour : MonoBehaviour
     /// <param name="degrees">The angle of increase in degrees</param>
     public void AddRotation(float degrees)
     {
-        targetRotation *= Quaternion.Euler(new Vector3(0, 0, degrees));
+        targetRotation *= Quaternion.Euler(new Vector3(0, degrees, 0));
     }
 
     /// <summary>
