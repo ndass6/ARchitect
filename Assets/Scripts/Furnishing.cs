@@ -5,6 +5,7 @@ public class Furnishing : MonoBehaviour
 {
     [SerializeField]
     private Hologram prefab;
+    public Hologram Prefab { get { return prefab; } }
 
     private SpriteRenderer spriteRenderer;
     private float targetAlpha = 0;

@@ -1,24 +1,40 @@
 ﻿using System;
-using Unity;
 using UnityEngine;
 
 public class Tooltip : MonoBehaviour
 {
-    void Update() {
+    private TextMesh text;
+
+    private SpriteRenderer spriteRenderer;
+    private float targetAlpha = 0;
+
+    public void Awake()
+    {
+        text = GetComponentInChildren<TextMesh>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
+
+    public void Update()
+    {
         RaycastHit hitInfo;
         Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hitInfo);
-        if (hitInfo.collider.GetComponent<Furnishing>())
+        if(hitInfo.collider && hitInfo.collider.GetComponent<Furnishing>())
         {
-            showTooltip(hitInfo.collider.gameObject);
+            Furnishing obj = hitInfo.collider.GetComponent<Furnishing>();
+            text.text = "<b>" + obj.name.Substring(0, obj.name.Length - 7) + ":</b>\n<i>$" + obj.Prefab.Cost.ToString("F2") + "</i>";
+            targetAlpha = 1;
         }
         else
         {
-            showTooltip(null);
+            text.text = "";
+            targetAlpha = 0;
         }
     }
 
-    private void showTooltip(GameObject obj)
+    public void FixedUpdate()
     {
-
+        Color temp = spriteRenderer.color;
+        temp.a = Mathf.Lerp(temp.a, targetAlpha, Time.fixedDeltaTime);
+        spriteRenderer.color = temp;
     }
 }
