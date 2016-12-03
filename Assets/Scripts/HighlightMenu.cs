@@ -3,11 +3,17 @@ using System.Collections;
 
 public class HighlightMenu : SmoothBehaviour
 {
-    public Hologram Selected;
-    public enum State { Idle, Move, Rotate }
+    public static HighlightMenu Instance;
 
-    [SerializeField]
-    private State state = State.Idle;
+    public Hologram Selected;
+
+    public enum State { Idle, Move, Rotate }
+    public State CurrentState = State.Idle;
+
+    public void Awake()
+    {
+        Instance = this;
+    }
 
     public override void Start()
     {
@@ -17,7 +23,8 @@ public class HighlightMenu : SmoothBehaviour
 
     public void Update()
     {
-        // Follow selected hologram if not null
+        if(Selected)
+            SetPosition(Selected.transform.position);
     }
 
     public void OpenMenu(Hologram hologram)
@@ -29,7 +36,7 @@ public class HighlightMenu : SmoothBehaviour
 
     public void CloseMenu()
     {
-        state = State.Idle;
+        CurrentState = State.Idle;
 
         // Turn off highlight effect
         Selected = null;

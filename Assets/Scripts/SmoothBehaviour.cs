@@ -40,17 +40,35 @@ public class SmoothBehaviour : MonoBehaviour
     /// Simple wrapper method to move the hologram.
     /// </summary>
     /// <param name="value">Vector to move the hologram</param>
-    public void Move(Vector3 value)
+    public void AddPosition(Vector3 value)
     {
         targetPosition += value;
+    }
+
+    /// <summary>
+    /// Simple wrapper method to set the hologram's position.
+    /// </summary>
+    /// <param name="value">Vector to set the hologram to</param>
+    public void SetPosition(Vector3 value)
+    {
+        targetPosition = value;
     }
 
     /// <summary>
     /// Simple wrapper method to rotate the hologram.
     /// </summary>
     /// <param name="degrees">The angle of increase in degrees</param>
-    public void Rotate(float degrees)
+    public void AddRotation(float degrees)
     {
         targetRotation *= Quaternion.Euler(new Vector3(0, 0, degrees));
+    }
+
+    /// <summary>
+    /// Simple wrapper method to set the hologram's rotation.
+    /// </summary>
+    /// <param name="degrees">The angle to set the hologram's rotation to</param>
+    public void SetRotation(float degrees)
+    {
+        targetRotation = Quaternion.Euler(new Vector3(0, 0, degrees));
     }
 }
