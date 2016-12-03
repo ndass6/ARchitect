@@ -203,6 +203,7 @@ public class GestureDetector : MonoBehaviour
                     break;
                 case HighlightButton.State.Delete:
                     Destroy(HighlightMenu.Instance.Selected.gameObject);
+                    HighlightMenu.Instance.CloseMenu();
                     CostDisplay.Instance.UpdateCost();
                     Transition(TapRecognizer);
                     break;
