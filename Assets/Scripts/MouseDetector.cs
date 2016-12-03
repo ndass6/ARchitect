@@ -16,9 +16,6 @@ public class MouseDetector : MonoBehaviour
             {
                 switch(hitInfo.collider.GetComponent<HighlightButton>().CurrentState)
                 {
-                    case HighlightButton.State.Idle:
-                        HighlightMenu.Instance.CurrentState = HighlightMenu.State.Idle;
-                        break;
                     case HighlightButton.State.Move:
                         HighlightMenu.Instance.CurrentState = HighlightMenu.State.Move;
                         break;

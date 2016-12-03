@@ -25,14 +25,14 @@ public class HighlightMenu : SmoothBehaviour
     public void Update()
     {
         if(Selected)
-            SetPosition(Selected.transform.position);
+            SetPosition(Selected.transform.position + new Vector3(0, 2, 0));
     }
 
     public void OpenMenu(Hologram hologram)
     {
         // Turn on highlight effect
         Selected = hologram;
-        GetComponent<MeshRenderer>().enabled = true;
+        gameObject.SetActive(true);
     }
 
     public void CloseMenu()
@@ -41,6 +41,6 @@ public class HighlightMenu : SmoothBehaviour
 
         // Turn off highlight effect
         Selected = null;
-        GetComponent<MeshRenderer>().enabled = false;
+        gameObject.SetActive(false);
     }
 }
