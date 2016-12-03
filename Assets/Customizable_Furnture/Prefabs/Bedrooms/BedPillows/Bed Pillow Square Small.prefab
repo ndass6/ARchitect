@@ -529,6 +529,7 @@ GameObject:
   m_Component:
   - component: {fileID: 405474}
   - component: {fileID: 11466652}
+  - component: {fileID: 114516183154277098}
   m_Layer: 0
   m_Name: Bed Pillow Square Small
   m_TagString: Untagged
@@ -3322,3 +3323,19 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 141672}
   m_IsPrefabParent: 1
+--- !u!114 &114516183154277098
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 141672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b0525ef2e57da74a8067501718ba702, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maintainDistance: 0
+  faceCamera: 0
+  smoothPosition: 0
+  smoothRotation: 0
+  Cost: 0
