@@ -28,14 +28,14 @@ public class GestureDetector : MonoBehaviour
                 Collider col = hitInfo.collider;
                 if (col.tag == "Card")
                 {
-                    GetComponent<CardController>().RemoveCard(col.GetComponent<Card>());
+                    // GetComponent<CardController>().RemoveCard(col.GetComponent<Card>());
                     return;
                 }
             }
             else
             {
                 // TODO Call photo capture instead
-                gameObject.AddComponent<CameraCapture>();
+                // gameObject.AddComponent<CameraCapture>();
             }
         };
         recognizer.StartCapturingGestures();
