@@ -21,10 +21,16 @@ public class MouseDetector : MonoBehaviour
                     switch(hitInfo.collider.GetComponent<HighlightButton>().CurrentState)
                     {
                         case HighlightButton.State.Move:
-                            HighlightMenu.Instance.CurrentState = HighlightMenu.State.Move;
+                            if(HighlightMenu.Instance.CurrentState == HighlightMenu.State.Move)
+                                HighlightMenu.Instance.CurrentState = HighlightMenu.State.Idle;
+                            else
+                                HighlightMenu.Instance.CurrentState = HighlightMenu.State.Move;
                             break;
                         case HighlightButton.State.Rotate:
-                            HighlightMenu.Instance.CurrentState = HighlightMenu.State.Rotate;
+                            if(HighlightMenu.Instance.CurrentState == HighlightMenu.State.Rotate)
+                                HighlightMenu.Instance.CurrentState = HighlightMenu.State.Idle;
+                            else
+                                HighlightMenu.Instance.CurrentState = HighlightMenu.State.Rotate;
                             break;
                         case HighlightButton.State.Delete:
                             Destroy(HighlightMenu.Instance.Selected.gameObject);
