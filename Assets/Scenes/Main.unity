@@ -580,7 +580,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 125, y: -50}
+  m_AnchoredPosition: {x: 175, y: -100}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &839564519
@@ -995,6 +995,13 @@ MonoBehaviour:
   faceCamera: 1
   smoothPosition: 0
   smoothRotation: 1
+  Furnishings:
+  - {fileID: 699047703}
+  - {fileID: 1737303622}
+  - {fileID: 1922967465}
+  - {fileID: 2139573129}
+  - {fileID: 16837123}
+  - {fileID: 2091876536}
 --- !u!4 &1676529449
 Transform:
   m_ObjectHideFlags: 0
