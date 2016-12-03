@@ -28,13 +28,21 @@ public class MouseDetector : MonoBehaviour
                         break;
                     case HighlightButton.State.Delete:
                         Destroy(HighlightMenu.Instance.Selected.gameObject);
+                        CostDisplay.Instance.UpdateCost();
                         break;
                 }
+            }
+            else if(hitInfo.collider.GetComponent<Furnishing>())
+            {
+                hitInfo.collider.GetComponent<Furnishing>().Select();
             }
         }
         else if(Input.GetMouseButtonDown(1))
         {
-            // Show furniture menu
+            if(FurnishingMenu.Instance.gameObject.activeSelf)
+                FurnishingMenu.Instance.CloseMenu();
+            else
+                FurnishingMenu.Instance.OpenMenu();
         }
     }
 }

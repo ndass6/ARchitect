@@ -32,11 +32,14 @@ public class HighlightMenu : SmoothBehaviour
     {
         CurrentState = State.Idle;
 
-        // Failsafe
-        if(!hologram || hologram.Equals(Selected))
+        if(hologram.Equals(Selected))
         {
             CloseMenu();
             return;
+        }
+        else if(FurnishingMenu.Instance.gameObject.activeSelf)
+        {
+            FurnishingMenu.Instance.CloseMenu();
         }
 
         // TODO Turn on highlight effect
