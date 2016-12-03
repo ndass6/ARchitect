@@ -11,8 +11,12 @@ public class MouseDetector : MonoBehaviour
             RaycastHit hitInfo;
             Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hitInfo);
 
-            // Perform action based on selected menu button
-            if(hitInfo.collider.GetComponent<HighlightButton>())
+            // Perform action based on object clicked
+            if(hitInfo.collider.GetComponent<Hologram>())
+            {
+                HighlightMenu.Instance.OpenMenu(hitInfo.collider.GetComponent<Hologram>());
+            }
+            else if(hitInfo.collider.GetComponent<HighlightButton>())
             {
                 switch(hitInfo.collider.GetComponent<HighlightButton>().CurrentState)
                 {

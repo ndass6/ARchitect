@@ -30,16 +30,23 @@ public class HighlightMenu : SmoothBehaviour
 
     public void OpenMenu(Hologram hologram)
     {
-        // Turn on highlight effect
+        CurrentState = State.Idle;
+
+        // Failsafe
+        if(!hologram || hologram.Equals(Selected))
+        {
+            CloseMenu();
+            return;
+        }
+
+        // TODO Turn on highlight effect
         Selected = hologram;
         gameObject.SetActive(true);
     }
 
     public void CloseMenu()
     {
-        CurrentState = State.Idle;
-
-        // Turn off highlight effect
+        // TODO Turn off highlight effect
         Selected = null;
         gameObject.SetActive(false);
     }
