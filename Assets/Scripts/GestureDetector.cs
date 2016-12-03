@@ -87,22 +87,6 @@ public class GestureDetector : MonoBehaviour
             transform.Rotate(new Vector3(0, -1 * rotationFactor, 0));
 
         }
-        else if (hitInfo.collider.GetComponent<HighlightButton>())
-        {
-            switch (hitInfo.collider.GetComponent<HighlightButton>().CurrentState)
-            {
-                case HighlightButton.State.Move:
-                    HighlightMenu.Instance.CurrentState = HighlightMenu.State.Move;
-                    break;
-                case HighlightButton.State.Rotate:
-                    HighlightMenu.Instance.CurrentState = HighlightMenu.State.Rotate;
-                    break;
-                case HighlightButton.State.Delete:
-                    Destroy(HighlightMenu.Instance.Selected.gameObject);
-                    CostDisplay.Instance.UpdateCost();
-                    break;
-            }
-        }
     }
 
     private void Recognizer_NavigationCompletedEvent(InteractionSourceKind source, Vector3 relativePosition, Ray ray)
