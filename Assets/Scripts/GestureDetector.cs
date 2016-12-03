@@ -16,7 +16,7 @@ public class GestureDetector : MonoBehaviour
     private Vector3 navigationPreviousRotation { get; set; }
     private Vector3 manipulationPreviousPosition { get; set; }
 
-    private float rotationFactor = 5.0f;
+    private float rotationFactor = 20.0f;
     private float translationFactor = 5.0f;
 
     public void Awake()
