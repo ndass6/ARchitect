@@ -32,7 +32,7 @@ public class Furnishing : MonoBehaviour
     public void Select()
     {
         FurnishingMenu.Instance.CloseMenu();
-        Instantiate(prefab, Camera.main.transform.position + Camera.main.transform.forward * 5, Quaternion.identity);
+        Instantiate(prefab, Camera.main.transform.position + Camera.main.transform.forward * 5 + Camera.main.transform.up * -1, Quaternion.identity);
         CostDisplay.Instance.UpdateCost(prefab.Cost);
     }
 }
