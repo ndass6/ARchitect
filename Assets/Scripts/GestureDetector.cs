@@ -72,20 +72,19 @@ public class GestureDetector : MonoBehaviour
         IsNavigating = true;
         NavigationPosition = relativePosition;
 
-        RaycastHit hitInfo;
-        Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hitInfo);
-
-        // Perform action based on object clicked
-        if (hitInfo.collider.GetComponent<Hologram>() && HighlightMenu.Instance.CurrentState == HighlightMenu.State.Rotate)
+        // Make sure an object is selected
+        if (HighlightMenu.Instance.Selected)
         {
-            //HighlightMenu.Instance.OpenMenu(hitInfo.collider.GetComponent<Hologram>());
-            // Calculate rotationFactor based on GestureManager's NavigationPosition.X and multiply by RotationSensitivity.
-            // This will help control the amount of rotation.
-            float rotationFactor = Instance.NavigationPosition.x * 10.0f;
+            // Make sure the current state is rotate
+            if (HighlightMenu.Instance.CurrentState == HighlightMenu.State.Rotate)
+            {
+                // Calculate rotationFactor based on GestureManager's NavigationPosition.X and multiply by RotationSensitivity.
+                // This will help control the amount of rotation.
+                float rotationFactor = Instance.NavigationPosition.x * 10.0f;
 
-            //transform.Rotate along the Y axis using rotationFactor
-            transform.Rotate(new Vector3(0, -1 * rotationFactor, 0));
-
+                //transform.Rotate along the Y axis using rotationFactor
+                transform.Rotate(new Vector3(0, -1 * rotationFactor, 0));
+            }
         }
     }
 
