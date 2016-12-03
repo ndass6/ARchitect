@@ -13,7 +13,7 @@ public class GestureDetector : MonoBehaviour
 
     public bool IsManipulating { get; private set; }
 
-    public Vector3 ManipulationPosition { get; private set; }
+    public Vector3 manipulationPreviousPosition { get; private set; }
 
     public void Awake()
     {
@@ -69,7 +69,6 @@ public class GestureDetector : MonoBehaviour
 
     private void Recognizer_NavigationUpdatedEvent(InteractionSourceKind source, Vector3 relativePosition, Ray ray)
     {
-        IsNavigating = true;
         NavigationPosition = relativePosition;
 
         // Make sure an object is selected
@@ -101,13 +100,22 @@ public class GestureDetector : MonoBehaviour
     private void Recognizer_ManipulationStartedEvent(InteractionSourceKind source, Vector3 position, Ray ray)
     {
         IsManipulating = true;
-        ManipulationPosition = position;
+        manipulationPreviousPosition = position;
     }
 
     private void Recognizer_ManipulationUpdatedEvent(InteractionSourceKind source, Vector3 position, Ray ray)
     {
-        IsManipulating = true;
-        ManipulationPosition = position;
+        // Make sure an object is selected
+        if (HighlightMenu.Instance.Selected)
+        {
+            // Make sure the current state is move
+            if (HighlightMenu.Instance.CurrentState == HighlightMenu.State.Move)
+            {
+                Vector3 diffVector = position - manipulationPreviousPosition;
+                manipulationPreviousPosition = position;
+                HighlightMenu.Instance.Selected.gameObject.transform.position += diffVector;
+            }
+        }
     }
 
     private void Recognizer_ManipulationCompletedEvent(InteractionSourceKind source, Vector3 position, Ray ray)
