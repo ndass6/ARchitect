@@ -21,7 +21,9 @@ public class FurnishingMenu : SmoothBehaviour
     {
         if(HighlightMenu.Instance.Selected)
             HighlightMenu.Instance.CloseMenu();
-        
+
+        transform.position = targetPosition = Camera.main.transform.position + Camera.main.transform.forward * 20;
+        transform.rotation = targetRotation = Quaternion.LookRotation(Camera.main.transform.position - transform.position, Vector3.up);
         gameObject.SetActive(true);
     }
 

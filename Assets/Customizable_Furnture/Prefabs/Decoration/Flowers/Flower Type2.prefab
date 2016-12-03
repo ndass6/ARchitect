@@ -296,6 +296,7 @@ GameObject:
   m_Component:
   - component: {fileID: 443676}
   - component: {fileID: 11438400}
+  - component: {fileID: 114645466763027146}
   m_Layer: 0
   m_Name: Flower Type2
   m_TagString: Untagged
@@ -992,3 +993,19 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 195798}
   m_IsPrefabParent: 1
+--- !u!114 &114645466763027146
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 195798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b0525ef2e57da74a8067501718ba702, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maintainDistance: 0
+  faceCamera: 0
+  smoothPosition: 0
+  smoothRotation: 0
+  Cost: 10

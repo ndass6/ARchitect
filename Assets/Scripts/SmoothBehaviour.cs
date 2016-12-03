@@ -3,19 +3,19 @@
 public class SmoothBehaviour : MonoBehaviour
 {
     [SerializeField]
-    private bool maintainDistance = false;
+    protected bool maintainOffset = false;
     [SerializeField]
-    private bool faceCamera = false;
+    protected bool faceCamera = false;
 
     [SerializeField]
-    private bool smoothPosition = false;
+    protected bool smoothPosition = false;
     [SerializeField]
-    private bool smoothRotation = false;
+    protected bool smoothRotation = false;
 
-    private Vector3 targetPosition;
-    private Quaternion targetRotation;
+    protected Vector3 targetPosition;
+    protected Quaternion targetRotation;
 
-    private Vector3 offset;
+    protected Vector3 offset;
 
     public virtual void Start()
     {
@@ -27,7 +27,7 @@ public class SmoothBehaviour : MonoBehaviour
 
     public virtual void FixedUpdate()
     {
-        if(maintainDistance)
+        if(maintainOffset)
             targetPosition = Camera.main.transform.position + offset;
         transform.position = smoothPosition ? Vector3.Lerp(transform.position, targetPosition, Time.fixedDeltaTime * 4) : targetPosition;
 

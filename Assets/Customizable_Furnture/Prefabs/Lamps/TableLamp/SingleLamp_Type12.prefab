@@ -2186,6 +2186,7 @@ GameObject:
   m_Component:
   - component: {fileID: 445244}
   - component: {fileID: 11458534}
+  - component: {fileID: 114608813162585000}
   m_Layer: 0
   m_Name: SingleLamp_Type12
   m_TagString: Untagged
@@ -36615,6 +36616,7 @@ MonoBehaviour:
   - {fileID: 168692}
   currentDisplay: 0
   temporalGOArrange: 0
+  ButtonSelectable: 1
 --- !u!114 &11403004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -36637,6 +36639,7 @@ MonoBehaviour:
   - {fileID: 176914}
   currentDisplay: 0
   temporalGOArrange: 0
+  ButtonSelectable: 1
 --- !u!114 &11403372
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -36653,6 +36656,7 @@ MonoBehaviour:
   - {fileID: 176406}
   currentDisplay: 0
   temporalGOArrange: 0
+  ButtonSelectable: 1
 --- !u!114 &11405840
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -36675,6 +36679,7 @@ MonoBehaviour:
   - {fileID: 166376}
   currentDisplay: 0
   temporalGOArrange: 0
+  ButtonSelectable: 1
 --- !u!114 &11411228
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -36691,6 +36696,7 @@ MonoBehaviour:
   - {fileID: 192312}
   currentDisplay: 0
   temporalGOArrange: 0
+  ButtonSelectable: 1
 --- !u!114 &11411824
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -36707,6 +36713,7 @@ MonoBehaviour:
   - {fileID: 138550}
   currentDisplay: 0
   temporalGOArrange: 0
+  ButtonSelectable: 1
 --- !u!114 &11412840
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -36729,6 +36736,7 @@ MonoBehaviour:
   - {fileID: 143340}
   currentDisplay: 0
   temporalGOArrange: 0
+  ButtonSelectable: 1
 --- !u!114 &11415500
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -36751,6 +36759,7 @@ MonoBehaviour:
   - {fileID: 187970}
   currentDisplay: 0
   temporalGOArrange: 0
+  ButtonSelectable: 1
 --- !u!114 &11419318
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -36767,6 +36776,7 @@ MonoBehaviour:
   - {fileID: 147294}
   currentDisplay: 0
   temporalGOArrange: 0
+  ButtonSelectable: 1
 --- !u!114 &11420356
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -36783,6 +36793,7 @@ MonoBehaviour:
   - {fileID: 126112}
   currentDisplay: 0
   temporalGOArrange: 0
+  ButtonSelectable: 1
 --- !u!114 &11423234
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -36805,6 +36816,7 @@ MonoBehaviour:
   - {fileID: 101010}
   currentDisplay: 0
   temporalGOArrange: 0
+  ButtonSelectable: 1
 --- !u!114 &11428522
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -36831,6 +36843,7 @@ MonoBehaviour:
   - {fileID: 143534}
   currentDisplay: 11
   temporalGOArrange: 0
+  ButtonSelectable: 1
 --- !u!114 &11429848
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -36853,6 +36866,7 @@ MonoBehaviour:
   - {fileID: 104420}
   currentDisplay: 0
   temporalGOArrange: 0
+  ButtonSelectable: 1
 --- !u!114 &11429894
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -36875,6 +36889,7 @@ MonoBehaviour:
   - {fileID: 140696}
   currentDisplay: 0
   temporalGOArrange: 0
+  ButtonSelectable: 1
 --- !u!114 &11431372
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -36891,6 +36906,7 @@ MonoBehaviour:
   - {fileID: 175308}
   currentDisplay: 0
   temporalGOArrange: 0
+  ButtonSelectable: 1
 --- !u!114 &11432560
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -36913,6 +36929,7 @@ MonoBehaviour:
   - {fileID: 154502}
   currentDisplay: 0
   temporalGOArrange: 0
+  ButtonSelectable: 1
 --- !u!114 &11432784
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -36929,6 +36946,7 @@ MonoBehaviour:
   - {fileID: 198788}
   currentDisplay: 0
   temporalGOArrange: 0
+  ButtonSelectable: 1
 --- !u!114 &11433308
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -36951,6 +36969,7 @@ MonoBehaviour:
   - {fileID: 147032}
   currentDisplay: 0
   temporalGOArrange: 0
+  ButtonSelectable: 1
 --- !u!114 &11434098
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -36973,6 +36992,7 @@ MonoBehaviour:
   - {fileID: 115110}
   currentDisplay: 0
   temporalGOArrange: 0
+  ButtonSelectable: 1
 --- !u!114 &11435716
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -36995,6 +37015,7 @@ MonoBehaviour:
   - {fileID: 151932}
   currentDisplay: 0
   temporalGOArrange: 0
+  ButtonSelectable: 1
 --- !u!114 &11435816
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -37011,6 +37032,7 @@ MonoBehaviour:
   - {fileID: 129264}
   currentDisplay: 0
   temporalGOArrange: 0
+  ButtonSelectable: 1
 --- !u!114 &11439138
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -37027,6 +37049,7 @@ MonoBehaviour:
   - {fileID: 191840}
   currentDisplay: 0
   temporalGOArrange: 0
+  ButtonSelectable: 1
 --- !u!114 &11439164
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -37043,6 +37066,7 @@ MonoBehaviour:
   - {fileID: 192050}
   currentDisplay: 0
   temporalGOArrange: 0
+  ButtonSelectable: 1
 --- !u!114 &11441478
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -37065,6 +37089,7 @@ MonoBehaviour:
   - {fileID: 157570}
   currentDisplay: 0
   temporalGOArrange: 0
+  ButtonSelectable: 1
 --- !u!114 &11441726
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -37087,6 +37112,7 @@ MonoBehaviour:
   - {fileID: 115820}
   currentDisplay: 0
   temporalGOArrange: 0
+  ButtonSelectable: 1
 --- !u!114 &11443642
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -37109,6 +37135,7 @@ MonoBehaviour:
   - {fileID: 188366}
   currentDisplay: 0
   temporalGOArrange: 0
+  ButtonSelectable: 1
 --- !u!114 &11445162
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -37125,6 +37152,7 @@ MonoBehaviour:
   - {fileID: 153048}
   currentDisplay: 0
   temporalGOArrange: 0
+  ButtonSelectable: 1
 --- !u!114 &11448050
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -37147,6 +37175,7 @@ MonoBehaviour:
   - {fileID: 187134}
   currentDisplay: 0
   temporalGOArrange: 0
+  ButtonSelectable: 1
 --- !u!114 &11449002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -37163,6 +37192,7 @@ MonoBehaviour:
   - {fileID: 123418}
   currentDisplay: 0
   temporalGOArrange: 0
+  ButtonSelectable: 1
 --- !u!114 &11451122
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -37185,6 +37215,7 @@ MonoBehaviour:
   - {fileID: 157262}
   currentDisplay: 0
   temporalGOArrange: 0
+  ButtonSelectable: 1
 --- !u!114 &11457658
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -37207,6 +37238,7 @@ MonoBehaviour:
   - {fileID: 100712}
   currentDisplay: 0
   temporalGOArrange: 0
+  ButtonSelectable: 1
 --- !u!114 &11457744
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -37223,6 +37255,7 @@ MonoBehaviour:
   - {fileID: 186002}
   currentDisplay: 0
   temporalGOArrange: 0
+  ButtonSelectable: 1
 --- !u!114 &11457934
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -37245,6 +37278,7 @@ MonoBehaviour:
   - {fileID: 177666}
   currentDisplay: 0
   temporalGOArrange: 0
+  ButtonSelectable: 1
 --- !u!114 &11457986
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -37267,6 +37301,7 @@ MonoBehaviour:
   - {fileID: 193756}
   currentDisplay: 0
   temporalGOArrange: 0
+  ButtonSelectable: 1
 --- !u!114 &11458394
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -37289,6 +37324,7 @@ MonoBehaviour:
   - {fileID: 121052}
   currentDisplay: 0
   temporalGOArrange: 0
+  ButtonSelectable: 1
 --- !u!114 &11458534
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -37309,222 +37345,8 @@ MonoBehaviour:
   - {fileID: 11497894}
   displayFrame: []
   blindsOpenValue: 0
-  modelPath: 
-  model2Path: 54657874757265732f53637265656e4c616d70466c6f6f725f4d6f64656c735f54657874757265446973706c6179
-  model3Path: 
-  UtilityPath: 54657874757265732f42756c62436f6c6f725f54657874757265446973706c6179
-  Utility2Path: 54657874757265732f42756c625377697463685f54657874757265446973706c6179
-  modelTextures: []
-  model2Textures:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  model3Textures: []
-  UtilityTextures:
-  - {fileID: 0}
-  - {fileID: 0}
-  Utility2Textures:
-  - {fileID: 0}
-  - {fileID: 0}
-  LEDTextures:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  plasticTextures:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  quarryTextures:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  woodTextures:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  marbleTextures:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  clothTextures:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  metalTextures:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  lampTextures:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  curtainsTextures:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  wallsTextures:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  floorTextures:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  blindsTextures:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  glassTextures:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  tallPictures:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  longPictures:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  quadPictures:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  furnitureTextures: {fileID: 0}
+  GlobalOptionsDisplaySaveVar: {fileID: 0}
 --- !u!114 &11460976
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -37547,6 +37369,7 @@ MonoBehaviour:
   - {fileID: 169812}
   currentDisplay: 0
   temporalGOArrange: 0
+  ButtonSelectable: 1
 --- !u!114 &11463030
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -37569,6 +37392,7 @@ MonoBehaviour:
   - {fileID: 182708}
   currentDisplay: 0
   temporalGOArrange: 0
+  ButtonSelectable: 1
 --- !u!114 &11463762
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -37591,6 +37415,7 @@ MonoBehaviour:
   - {fileID: 176374}
   currentDisplay: 0
   temporalGOArrange: 0
+  ButtonSelectable: 1
 --- !u!114 &11466074
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -37607,6 +37432,7 @@ MonoBehaviour:
   - {fileID: 138856}
   currentDisplay: 0
   temporalGOArrange: 0
+  ButtonSelectable: 1
 --- !u!114 &11468190
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -37629,6 +37455,7 @@ MonoBehaviour:
   - {fileID: 149912}
   currentDisplay: 0
   temporalGOArrange: 0
+  ButtonSelectable: 1
 --- !u!114 &11468212
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -37645,6 +37472,7 @@ MonoBehaviour:
   - {fileID: 132816}
   currentDisplay: 0
   temporalGOArrange: 0
+  ButtonSelectable: 1
 --- !u!114 &11468362
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -37667,6 +37495,7 @@ MonoBehaviour:
   - {fileID: 150476}
   currentDisplay: 0
   temporalGOArrange: 0
+  ButtonSelectable: 1
 --- !u!114 &11468806
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -37689,6 +37518,7 @@ MonoBehaviour:
   - {fileID: 158796}
   currentDisplay: 0
   temporalGOArrange: 0
+  ButtonSelectable: 1
 --- !u!114 &11469856
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -37705,6 +37535,7 @@ MonoBehaviour:
   - {fileID: 116060}
   currentDisplay: 0
   temporalGOArrange: 0
+  ButtonSelectable: 1
 --- !u!114 &11471510
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -37721,6 +37552,7 @@ MonoBehaviour:
   - {fileID: 127274}
   currentDisplay: 0
   temporalGOArrange: 0
+  ButtonSelectable: 1
 --- !u!114 &11471804
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -37743,6 +37575,7 @@ MonoBehaviour:
   - {fileID: 135218}
   currentDisplay: 0
   temporalGOArrange: 0
+  ButtonSelectable: 1
 --- !u!114 &11472492
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -37765,6 +37598,7 @@ MonoBehaviour:
   - {fileID: 186964}
   currentDisplay: 0
   temporalGOArrange: 0
+  ButtonSelectable: 1
 --- !u!114 &11473528
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -37787,6 +37621,7 @@ MonoBehaviour:
   - {fileID: 143350}
   currentDisplay: 0
   temporalGOArrange: 0
+  ButtonSelectable: 1
 --- !u!114 &11478958
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -37803,6 +37638,7 @@ MonoBehaviour:
   - {fileID: 195546}
   currentDisplay: 0
   temporalGOArrange: 0
+  ButtonSelectable: 1
 --- !u!114 &11479422
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -37819,6 +37655,7 @@ MonoBehaviour:
   - {fileID: 162820}
   currentDisplay: 0
   temporalGOArrange: 0
+  ButtonSelectable: 1
 --- !u!114 &11479792
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -37841,6 +37678,7 @@ MonoBehaviour:
   - {fileID: 164968}
   currentDisplay: 0
   temporalGOArrange: 0
+  ButtonSelectable: 1
 --- !u!114 &11485864
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -37863,6 +37701,7 @@ MonoBehaviour:
   - {fileID: 125822}
   currentDisplay: 0
   temporalGOArrange: 0
+  ButtonSelectable: 1
 --- !u!114 &11488858
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -37879,6 +37718,7 @@ MonoBehaviour:
   - {fileID: 120014}
   currentDisplay: 0
   temporalGOArrange: 0
+  ButtonSelectable: 1
 --- !u!114 &11489844
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -37901,6 +37741,7 @@ MonoBehaviour:
   - {fileID: 132912}
   currentDisplay: 0
   temporalGOArrange: 0
+  ButtonSelectable: 1
 --- !u!114 &11490292
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -37923,6 +37764,7 @@ MonoBehaviour:
   - {fileID: 149788}
   currentDisplay: 0
   temporalGOArrange: 0
+  ButtonSelectable: 1
 --- !u!114 &11491292
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -37939,6 +37781,7 @@ MonoBehaviour:
   - {fileID: 160300}
   currentDisplay: 0
   temporalGOArrange: 0
+  ButtonSelectable: 1
 --- !u!114 &11492400
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -37961,6 +37804,7 @@ MonoBehaviour:
   - {fileID: 192488}
   currentDisplay: 0
   temporalGOArrange: 0
+  ButtonSelectable: 1
 --- !u!114 &11495430
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -37977,6 +37821,7 @@ MonoBehaviour:
   - {fileID: 169984}
   currentDisplay: 0
   temporalGOArrange: 0
+  ButtonSelectable: 1
 --- !u!114 &11495536
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -37999,6 +37844,7 @@ MonoBehaviour:
   - {fileID: 122526}
   currentDisplay: 0
   temporalGOArrange: 0
+  ButtonSelectable: 1
 --- !u!114 &11497894
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -38021,6 +37867,7 @@ MonoBehaviour:
   - {fileID: 152078}
   currentDisplay: 0
   temporalGOArrange: 0
+  ButtonSelectable: 1
 --- !u!114 &11499054
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -38037,6 +37884,7 @@ MonoBehaviour:
   - {fileID: 163314}
   currentDisplay: 0
   temporalGOArrange: 0
+  ButtonSelectable: 1
 --- !u!114 &11499886
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -38053,6 +37901,7 @@ MonoBehaviour:
   - {fileID: 110710}
   currentDisplay: 0
   temporalGOArrange: 0
+  ButtonSelectable: 1
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -38068,3 +37917,19 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 116062}
   m_IsPrefabParent: 1
+--- !u!114 &114608813162585000
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 116062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b0525ef2e57da74a8067501718ba702, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maintainDistance: 0
+  faceCamera: 0
+  smoothPosition: 0
+  smoothRotation: 0
+  Cost: 15
