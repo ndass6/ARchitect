@@ -126,8 +126,12 @@ public class GestureDetector : MonoBehaviour
                     HighlightMenu.Instance.CurrentState = HighlightMenu.State.Rotate;
                     break;
                 case HighlightButton.State.Delete:
-                    Destroy(HighlightMenu.Instance.Selected.gameObject);
-                    CostDisplay.Instance.UpdateCost(-hitInfo.collider.GetComponent<Hologram>().Cost);
+                    if(!HighlightMenu.Instance.Busy)
+                    {
+                        CostDisplay.Instance.UpdateCost(-HighlightMenu.Instance.Selected.Cost);
+                        Destroy(HighlightMenu.Instance.Selected.gameObject);
+                        HighlightMenu.Instance.CloseMenu();
+                    }
                     break;
             }
         }

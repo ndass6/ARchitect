@@ -41,6 +41,7 @@ public class HighlightMenu : SmoothBehaviour
     public State currentState = State.Idle;
 
     private bool busy;
+    public bool Busy { get { return busy; } }
 
     private SpriteRenderer menuRenderer;
     private SpriteRenderer moveRenderer;
