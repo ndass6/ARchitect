@@ -5,75 +5,106 @@ public class GestureDetector : MonoBehaviour
 {
     public static GestureDetector Instance { get; private set; }
 
-    public GestureRecognizer Recognizer { get; private set; }
+    public GestureRecognizer ActiveRecognizer { get; private set; }
+    public GestureRecognizer TapRecognizer { get; private set; }
+    public GestureRecognizer NavigationRecognizer { get; private set; }
+    public GestureRecognizer ManipulationRecognizer { get; private set; }
 
     public bool IsNavigating { get; private set; }
-
-    public Vector3 NavigationPosition { get; private set; }
-
     public bool IsManipulating { get; private set; }
 
-    public Vector3 manipulationPreviousPosition { get; private set; }
+    private Vector3 navigationPreviousRotation { get; set; }
+    private Vector3 manipulationPreviousPosition { get; set; }
 
-    private float rotationFactor = 10.0f;
-
+    private float rotationFactor = 5.0f;
     private float translationFactor = 5.0f;
 
     public void Awake()
     {
         Instance = this;
 
-        // Set up a GestureRecognizer to detect Tap gestures
-        Recognizer = new GestureRecognizer();
+        TapRecognizer = new GestureRecognizer();
+        TapRecognizer.SetRecognizableGestures(GestureSettings.Tap | GestureSettings.Hold);
+        TapRecognizer.TappedEvent += Recognizer_TappedEvent;
+        TapRecognizer.HoldStartedEvent += Recognizer_HoldStartedEvent;
+        
+        NavigationRecognizer = new GestureRecognizer();
+        NavigationRecognizer.SetRecognizableGestures(GestureSettings.Tap | GestureSettings.Hold
+            | GestureSettings.NavigationX);
+        NavigationRecognizer.TappedEvent += Recognizer_TappedEvent;
+        NavigationRecognizer.HoldStartedEvent += Recognizer_HoldStartedEvent;
+        NavigationRecognizer.NavigationStartedEvent += Recognizer_NavigationStartedEvent;
+        NavigationRecognizer.NavigationUpdatedEvent += Recognizer_NavigationUpdatedEvent;
+        NavigationRecognizer.NavigationCompletedEvent += Recognizer_NavigationCompletedEvent;
+        NavigationRecognizer.NavigationCanceledEvent += Recognizer_NavigationCanceledEvent;
 
-        // Instantiate the NavigationRecognizer.
-        Recognizer = new GestureRecognizer();
+        ManipulationRecognizer = new GestureRecognizer();
+        ManipulationRecognizer.SetRecognizableGestures(GestureSettings.Tap | GestureSettings.Hold
+            | GestureSettings.ManipulationTranslate);
+        ManipulationRecognizer.TappedEvent += Recognizer_TappedEvent;
+        ManipulationRecognizer.HoldStartedEvent += Recognizer_HoldStartedEvent;
+        ManipulationRecognizer.ManipulationStartedEvent += Recognizer_ManipulationStartedEvent;
+        ManipulationRecognizer.ManipulationUpdatedEvent += Recognizer_ManipulationUpdatedEvent;
+        ManipulationRecognizer.ManipulationCompletedEvent += Recognizer_ManipulationCompletedEvent;
+        ManipulationRecognizer.ManipulationCanceledEvent += Recognizer_ManipulationCanceledEvent;
 
-        // Add RecognizableGestures.
-        Recognizer.SetRecognizableGestures(GestureSettings.Tap | GestureSettings.Hold
-            | GestureSettings.NavigationX | GestureSettings.ManipulationTranslate);
-
-        Recognizer.TappedEvent += Recognizer_TappedEvent;
-        Recognizer.HoldStartedEvent += Recognizer_HoldStartedEvent;
-        Recognizer.NavigationStartedEvent += Recognizer_NavigationStartedEvent;
-        Recognizer.NavigationUpdatedEvent += Recognizer_NavigationUpdatedEvent;
-        Recognizer.NavigationCompletedEvent += Recognizer_NavigationCompletedEvent;
-        Recognizer.NavigationCanceledEvent += Recognizer_NavigationCanceledEvent;
-        Recognizer.ManipulationStartedEvent += Recognizer_ManipulationStartedEvent;
-        Recognizer.ManipulationUpdatedEvent += Recognizer_ManipulationUpdatedEvent;
-        Recognizer.ManipulationCompletedEvent += Recognizer_ManipulationCompletedEvent;
-        Recognizer.ManipulationCanceledEvent += Recognizer_ManipulationCanceledEvent;
-
-        Recognizer.StartCapturingGestures();
+        ResetGestureRecognizers();
     }
 
     void OnDestroy()
     {
-        Recognizer.TappedEvent -= Recognizer_TappedEvent;
-        Recognizer.HoldStartedEvent -= Recognizer_HoldStartedEvent;
+        TapRecognizer.TappedEvent -= Recognizer_TappedEvent;
+        TapRecognizer.HoldStartedEvent -= Recognizer_HoldStartedEvent;
 
-        Recognizer.NavigationStartedEvent -= Recognizer_NavigationStartedEvent;
-        Recognizer.NavigationUpdatedEvent -= Recognizer_NavigationUpdatedEvent;
-        Recognizer.NavigationCompletedEvent -= Recognizer_NavigationCompletedEvent;
-        Recognizer.NavigationCanceledEvent -= Recognizer_NavigationCanceledEvent;
+        NavigationRecognizer.TappedEvent -= Recognizer_TappedEvent;
+        NavigationRecognizer.HoldStartedEvent -= Recognizer_HoldStartedEvent;
+        NavigationRecognizer.NavigationStartedEvent -= Recognizer_NavigationStartedEvent;
+        NavigationRecognizer.NavigationUpdatedEvent -= Recognizer_NavigationUpdatedEvent;
+        NavigationRecognizer.NavigationCompletedEvent -= Recognizer_NavigationCompletedEvent;
+        NavigationRecognizer.NavigationCanceledEvent -= Recognizer_NavigationCanceledEvent;
 
-        Recognizer.ManipulationStartedEvent -= Recognizer_ManipulationStartedEvent;
-        Recognizer.ManipulationUpdatedEvent -= Recognizer_ManipulationUpdatedEvent;
-        Recognizer.ManipulationCompletedEvent -= Recognizer_ManipulationCompletedEvent;
-        Recognizer.ManipulationCanceledEvent -= Recognizer_ManipulationCanceledEvent;
+        ManipulationRecognizer.TappedEvent -= Recognizer_TappedEvent;
+        ManipulationRecognizer.HoldStartedEvent -= Recognizer_HoldStartedEvent;
+        ManipulationRecognizer.ManipulationStartedEvent -= Recognizer_ManipulationStartedEvent;
+        ManipulationRecognizer.ManipulationUpdatedEvent -= Recognizer_ManipulationUpdatedEvent;
+        ManipulationRecognizer.ManipulationCompletedEvent -= Recognizer_ManipulationCompletedEvent;
+        ManipulationRecognizer.ManipulationCanceledEvent -= Recognizer_ManipulationCanceledEvent;
 
-        Recognizer.StopCapturingGestures();
+        ActiveRecognizer.StopCapturingGestures();
+    }
+
+    public void ResetGestureRecognizers()
+    {
+        Transition(TapRecognizer);
+    }
+
+    public void Transition(GestureRecognizer newRecognizer)
+    {
+        if (newRecognizer == null)
+        {
+            return;
+        }
+        if (ActiveRecognizer != null)
+        {
+            if (ActiveRecognizer == newRecognizer)
+            {
+                return;
+            }
+            ActiveRecognizer.CancelGestures();
+            ActiveRecognizer.StopCapturingGestures();
+        }
+        newRecognizer.StartCapturingGestures();
+        ActiveRecognizer = newRecognizer;
     }
 
     private void Recognizer_NavigationStartedEvent(InteractionSourceKind source, Vector3 relativePosition, Ray ray)
     {
         IsNavigating = true;
-        NavigationPosition = relativePosition;
+        navigationPreviousRotation = relativePosition;
     }
 
     private void Recognizer_NavigationUpdatedEvent(InteractionSourceKind source, Vector3 relativePosition, Ray ray)
     {
-        NavigationPosition = relativePosition;
 
         // Make sure an object is selected
         if (HighlightMenu.Instance.Selected)
@@ -81,10 +112,11 @@ public class GestureDetector : MonoBehaviour
             // Make sure the current state is rotate
             if (HighlightMenu.Instance.CurrentState == HighlightMenu.State.Rotate)
             {
-                // Calculate based on GestureManager's NavigationPosition.X and multiply by RotationSensitivity.
+                // Rotate along the Y axis using rotationFactor
 
-                //transform.Rotate along the Y axis using rotationFactor
-                transform.Rotate(new Vector3(0, -1 * Instance.NavigationPosition.x * rotationFactor, 0));
+                Vector3 diffVector = relativePosition - navigationPreviousRotation;
+                HighlightMenu.Instance.Selected.AddRotation(-1 * diffVector.x * rotationFactor);
+                navigationPreviousRotation = relativePosition;
             }
         }
     }
@@ -114,8 +146,8 @@ public class GestureDetector : MonoBehaviour
             if (HighlightMenu.Instance.CurrentState == HighlightMenu.State.Move)
             {
                 Vector3 diffVector = position - manipulationPreviousPosition;
+                HighlightMenu.Instance.Selected.AddPosition(diffVector * translationFactor);
                 manipulationPreviousPosition = position;
-                HighlightMenu.Instance.Selected.gameObject.transform.position += diffVector * translationFactor;
             }
         }
     }
@@ -139,6 +171,7 @@ public class GestureDetector : MonoBehaviour
         if (hitInfo.collider.GetComponent<Hologram>())
         {
             HighlightMenu.Instance.OpenMenu(hitInfo.collider.GetComponent<Hologram>());
+            Transition(TapRecognizer);
         }
         else if (hitInfo.collider.GetComponent<HighlightButton>())
         {
@@ -146,19 +179,23 @@ public class GestureDetector : MonoBehaviour
             {
                 case HighlightButton.State.Move:
                     HighlightMenu.Instance.CurrentState = HighlightMenu.State.Move;
+                    Transition(ManipulationRecognizer);
                     break;
                 case HighlightButton.State.Rotate:
                     HighlightMenu.Instance.CurrentState = HighlightMenu.State.Rotate;
+                    Transition(NavigationRecognizer);
                     break;
                 case HighlightButton.State.Delete:
                     Destroy(HighlightMenu.Instance.Selected.gameObject);
                     CostDisplay.Instance.UpdateCost();
+                    Transition(TapRecognizer);
                     break;
             }
         }
         else if (hitInfo.collider.GetComponent<Furnishing>())
         {
             hitInfo.collider.GetComponent<Furnishing>().Select();
+            Transition(TapRecognizer);
         }
     }
 
