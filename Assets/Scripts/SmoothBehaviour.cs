@@ -1,18 +1,23 @@
 ﻿using UnityEngine;
 
-public class SmoothBehavior : MonoBehaviour
+public class SmoothBehaviour : MonoBehaviour
 {
     [SerializeField]
     private bool maintainDistance = false;
     [SerializeField]
     private bool faceCamera = false;
 
+    [SerializeField]
+    private bool smoothPosition = false;
+    [SerializeField]
+    private bool smoothRotation = false;
+
     private Vector3 targetPosition;
     private Quaternion targetRotation;
 
     private Vector3 offset;
 
-    public void Start()
+    public virtual void Start()
     {
         targetPosition = transform.position;
         targetRotation = transform.rotation;
@@ -24,15 +29,15 @@ public class SmoothBehavior : MonoBehaviour
     {
         if(maintainDistance)
             targetPosition = Camera.main.transform.position + offset;
-        transform.position = Vector3.Lerp(transform.position, targetPosition, Time.fixedDeltaTime * 4);
-        
+        transform.position = smoothPosition ? Vector3.Lerp(transform.position, targetPosition, Time.fixedDeltaTime * 4) : targetPosition;
+
         if(faceCamera)
             targetRotation = Quaternion.LookRotation(Vector3.forward, Camera.main.transform.position - transform.position);
-        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.fixedDeltaTime * 4);
+        transform.rotation = smoothRotation ? Quaternion.Slerp(transform.rotation, targetRotation, Time.fixedDeltaTime * 4) : targetRotation;
     }
 
     /// <summary>
-    /// Simple wrapper method to move the hologram
+    /// Simple wrapper method to move the hologram.
     /// </summary>
     /// <param name="value">Vector to move the hologram</param>
     public void Move(Vector3 value)
@@ -41,7 +46,7 @@ public class SmoothBehavior : MonoBehaviour
     }
 
     /// <summary>
-    /// Simple wrapper method to rotate the hologram
+    /// Simple wrapper method to rotate the hologram.
     /// </summary>
     /// <param name="degrees">The angle of increase in degrees</param>
     public void Rotate(float degrees)
