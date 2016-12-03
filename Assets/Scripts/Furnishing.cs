@@ -13,6 +13,6 @@ public class Furnishing : MonoBehaviour
     {
         FurnishingMenu.Instance.CloseMenu();
         Instantiate(prefab, Camera.main.transform.position + Camera.main.transform.forward * 5, Quaternion.identity);
-        CostDisplay.Instance.UpdateCost();
+        CostDisplay.Instance.UpdateCost(prefab.Cost);
     }
 }

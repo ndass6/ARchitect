@@ -7,6 +7,6 @@ public class Hologram : SmoothBehaviour
 
     public void OnDestroy()
     {
-        CostDisplay.Instance.UpdateCost();
+       CostDisplay.Instance.UpdateCost(-Cost);
     }
 }

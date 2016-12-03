@@ -9,23 +9,28 @@ public class CostDisplay : MonoBehaviour
     public static CostDisplay Instance;
 
     private Text costText;
+    private float totalCost;
 
     public void Awake()
     {
         Instance = this;
+        totalCost = 0;
         costText = GetComponent<Text>();
     }
 
     public void Start()
     {
-        UpdateCost();
+        UpdateCost(0);
     }
 
-    public void UpdateCost()
+    public void UpdateCost(float cost)
     {
-        float totalCost = 0;
-        foreach(Hologram hologram in FindObjectsOfType<Hologram>()) // TODO Make more efficient
-            totalCost += hologram.Cost;
-        costText.text = "<b>Total cost:</b> <i>$" + totalCost.ToString("F2") + "</i>";
+        //float totalCost = 0;
+        costText.fontSize = 20;
+        //foreach (Hologram hologram in FindObjectsOfType<Hologram>()) {
+            totalCost += cost;
+            costText.text = "<b>Total cost:</b> <i>$" + totalCost.ToString("F2") + "</i>";
+        //}
+        // TODO Make more efficient    
     }
 }
