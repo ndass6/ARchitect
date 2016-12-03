@@ -178,12 +178,28 @@ public class GestureDetector : MonoBehaviour
             switch (hitInfo.collider.GetComponent<HighlightButton>().CurrentState)
             {
                 case HighlightButton.State.Move:
-                    HighlightMenu.Instance.CurrentState = HighlightMenu.State.Move;
-                    Transition(ManipulationRecognizer);
+                    if (HighlightMenu.Instance.CurrentState == HighlightMenu.State.Move)
+                    {
+                        HighlightMenu.Instance.CurrentState = HighlightMenu.State.Idle;
+                        Transition(TapRecognizer);
+                    }
+                    else
+                    {
+                        HighlightMenu.Instance.CurrentState = HighlightMenu.State.Move;
+                        Transition(ManipulationRecognizer);
+                    }
                     break;
                 case HighlightButton.State.Rotate:
-                    HighlightMenu.Instance.CurrentState = HighlightMenu.State.Rotate;
-                    Transition(NavigationRecognizer);
+                    if (HighlightMenu.Instance.CurrentState == HighlightMenu.State.Rotate)
+                    {
+                        HighlightMenu.Instance.CurrentState = HighlightMenu.State.Idle;
+                        Transition(TapRecognizer);
+                    }
+                    else
+                    {
+                        HighlightMenu.Instance.CurrentState = HighlightMenu.State.Rotate;
+                        Transition(NavigationRecognizer);
+                    }
                     break;
                 case HighlightButton.State.Delete:
                     Destroy(HighlightMenu.Instance.Selected.gameObject);
